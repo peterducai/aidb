@@ -1,7 +1,6 @@
 image: docker:latest
 
 variables:
-  CI_REGISTRY_USER: "peter.ducai.dev@gmail.com"
   CI_REGISTRY: "https://hub.docker.com"
   CI_REGISTRY_IMAGE: "https://hub.docker.com/r/peterducai/aidb/"
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
