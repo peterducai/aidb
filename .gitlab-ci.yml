@@ -1,4 +1,4 @@
-image: docker
+image: docker:latest
 
 variables:
   CI_REGISTRY_USER: "peter.ducai.dev@gmail.com"
