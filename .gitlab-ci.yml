@@ -2,13 +2,9 @@ image: docker:latest
 
 variables:
   CI_REGISTRY_USER: "peter.ducai.dev@gmail.com"
-  CI_REGISTRY_PASSWORD: "********"
   CI_REGISTRY: "https://hub.docker.com"
   CI_REGISTRY_IMAGE: "https://hub.docker.com/r/peterducai/aidb/"
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-#  POSTGRES_DB: "aidb"
-#  POSTGRES_USER: "docker"
-#  POSTGRES_PASSWORD: "post123"
 
 services:
   - docker:dind
@@ -31,5 +27,12 @@ build:
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
     - master
+
+
+variables:
+  CI_REGISTRY_USER: "peter.ducai.dev@gmail.com"
+  CI_REGISTRY: "https://hub.docker.com"
+  CI_REGISTRY_IMAGE: "https://hub.docker.com/r/peterducai/aidb/"
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
 
 
