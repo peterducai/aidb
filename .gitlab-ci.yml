@@ -6,6 +6,10 @@ variables:
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: post123
 
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - apk update && apk upgrade && apk add --no-cache git 
+
 
 build:
   tags: 
