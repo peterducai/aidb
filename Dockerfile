@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM postgres
 
 ENV POSTGRES_USER docker
 ENV POSTGRES_PASSWORD post123
