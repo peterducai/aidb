@@ -265,6 +265,7 @@ CREATE TYPE aidb.host_type AS ENUM ('physical',
     'not_specified'
 );
 
+
 ---
 --- HOST category
 ---
@@ -414,6 +415,12 @@ CREATE TABLE aidb.network_interface (
     purchase_order TEXT REFERENCES aidb.purchase_order (financial_id));
 
 
+---
+--- NIC type
+---
+CREATE TYPE aidb.os_type AS ENUM ('general_purpose',
+    'atomic_host',
+);
 
 ---
 --- OS
@@ -427,6 +434,7 @@ CREATE TABLE aidb.operating_system (
     pretty_name TEXT,
     kernel_version TEXT,   --- uname -r / 4.14.18-300.fc27.x86_64
     arch text, --- uname -m/-p
+    ostype aidb.os_type DEFAULT 'general_purpose',
     supported_until DATE,
     license INTEGER REFERENCES aidb.license(id),
     purchase_order TEXT REFERENCES aidb.purchase_order (financial_id));
