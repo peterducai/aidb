@@ -1,9 +1,9 @@
 image: docker:latest
 
-CI_REGISTRY_USER=xxxx
+CI_REGISTRY_USER=peter.ducai@gmail.com
 CI_REGISTRY_PASSWORD=********
-CI_REGISTRY=index.docker.io
-CI_REGISTRY_IMAGE=index.docker.io/peterducai/aidb
+CI_REGISTRY=hub.docker.com
+CI_REGISTRY_IMAGE=https://hub.docker.com/r/daemonna/aidb/
 
 services:
   - docker:dind
