@@ -1,0 +1,2 @@
+# aidb
+asset inventory database
