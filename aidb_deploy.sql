@@ -419,7 +419,7 @@ CREATE TABLE aidb.network_interface (
 --- NIC type
 ---
 CREATE TYPE aidb.os_type AS ENUM ('general_purpose',
-    'atomic_host',
+    'atomic_host'
 );
 
 ---
