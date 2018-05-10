@@ -3,10 +3,13 @@ asset inventory database
 
 ## Docker
 
-> sudo docker run -it --name aidb1 -p 5432:5432 -e POSTGRES_PASSWORD=post123 -d peterducai/aidb:latest
-
-then run 
+to run DB use 
 
 ```bash
-PGPASSWORD=post123 psql -h localhost -d aidb -U docker -c 'SELECT * FROM aidb.country;'
+sudo docker stop aidb1 && sudo docker rm aidb1
+sudo docker run -it --name aidb1 -p 5432:5432 -e POSTGRES_PASSWORD=post123 -d peterducai/aidb:latest
+sudo docker logs aidb1
 ```
+
+
+> see also https://github.com/peterducai/aidb_portal
