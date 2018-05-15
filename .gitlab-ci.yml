@@ -10,9 +10,6 @@ variables:
   CI_REGISTRY_IMAGE: "docker.io/peterducai/aidb"
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
 
-services:
-  - docker:dind
-
 before_script:
   - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
