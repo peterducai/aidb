@@ -9,13 +9,13 @@ INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.
 INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Zagreb'), 1, 155, 'R1');
 INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Athens'), 5, 532, 'R1');
 --- Insert RACK into room
-INSERT INTO aidb.rack (rack_name, rack_positions, purchase_order,room)
+INSERT INTO aidb.rack (rack_name, rack_size, purchase_order,room)
   VALUES ('rck1L', 64, 'M4c0vx4t3jt24234', (SELECT aidb.room.id FROM aidb.room WHERE aidb.room.room_name = 'R1' AND aidb.room.loc = 'Bratislava'));
-  INSERT INTO aidb.rack (rack_name, rack_positions, purchase_order,room)
+  INSERT INTO aidb.rack (rack_name, rack_size, purchase_order,room)
   VALUES ('rck1L', 64, 'M550vx4t3jt24234', (SELECT aidb.room.id FROM aidb.room WHERE aidb.room.room_name = 'R2' AND aidb.room.loc = 'Bratislava'));
-  INSERT INTO aidb.rack (rack_name, rack_positions, purchase_order,room)
+  INSERT INTO aidb.rack (rack_name, rack_size, purchase_order,room)
   VALUES ('rck1M', 36, 'M345345355t24234', (SELECT aidb.room.id FROM aidb.room WHERE aidb.room.room_name = 'R1' AND aidb.room.loc = 'Zagreb'));
-  INSERT INTO aidb.rack (rack_name, rack_positions, purchase_order,room)
+  INSERT INTO aidb.rack (rack_name, rack_size, purchase_order,room)
   VALUES ('rck1L', 64, 'dfggfgft3jt24234', (SELECT aidb.room.id FROM aidb.room WHERE aidb.room.room_name = 'R1' AND aidb.room.loc = 'Athens'));
 ---
 
