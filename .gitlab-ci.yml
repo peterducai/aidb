@@ -2,7 +2,7 @@ image: docker:latest
 
 variables:
   CI_REGISTRY: "https://index.docker.io/v1"
-  CI_REGISTRY_IMAGE: "docker.io/peterducai/aidb"
+  CI_REGISTRY_IMAGE: "peterducai/aidb"
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
 
 services:
