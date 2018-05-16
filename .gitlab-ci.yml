@@ -21,8 +21,6 @@ build-master:
   script:
     - docker build --pull -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
-  only:
-    - master
 
 build:
   stage: test
