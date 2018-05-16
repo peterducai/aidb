@@ -10,7 +10,6 @@ services:
 
 stages:
   - build
-  - test
   - push
 
 before_script:
@@ -21,14 +20,6 @@ build-master:
   script:
     - docker build --pull -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
-
-build:
-  stage: test
-  script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
-  except:
-    - master
 
 push_latest:
   stage: push
