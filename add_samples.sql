@@ -1,20 +1,16 @@
 
+--- FAKE DATA SAMPLE
+
+
 --- Insert LOCATIONS
-INSERT INTO aidb.location (country,description,town,street,zipcode) VALUES 
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Bratislava'),'BA1','Bratislava','some_street 343','84463');
-INSERT INTO aidb.location (country,description,town,street,zipcode) VALUES
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Zagreb'),'ZA1','Zagreb','some_street 343','84463');
-INSERT INTO aidb.location (country,description,town,street,zipcode) VALUES
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Athens'),'ATH1','Athens','some_street 343','84463');
+INSERT INTO aidb.location (country,description,town,street,zipcode) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Bratislava'),'BA1','Bratislava','some_street 343','84463');
+INSERT INTO aidb.location (country,description,town,street,zipcode) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Zagreb'),'ZA1','Zagreb','some_street 343','84463');
+INSERT INTO aidb.location (country,description,town,street,zipcode) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Athens'),'ATH1','Athens','some_street 343','84463');
 --- Insert ROOMs into locations
-INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Bratislava'), 2, 244, 'R1');
-INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Bratislava'), 4, 412, 'R2');
-INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Zagreb'), 1, 155, 'R1');
-INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES
-  ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Athens'), 5, 532, 'R1');
+INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Bratislava'), 2, 244, 'R1');
+INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Bratislava'), 4, 412, 'R2');
+INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Zagreb'), 1, 155, 'R1');
+INSERT INTO aidb.room (loc, floor, room_number, room_name) VALUES ((SELECT aidb.location.id FROM aidb.location WHERE aidb.location.town = 'Athens'), 5, 532, 'R1');
 --- Insert RACK into room
 INSERT INTO aidb.rack (rack_name, rack_size, purchase_order,room)
   VALUES ('rck1L', 64, 'M4c0vx4t3jt24234', (SELECT aidb.room.id FROM aidb.room WHERE aidb.room.room_name = 'R1' AND aidb.room.loc = 'Bratislava'));
