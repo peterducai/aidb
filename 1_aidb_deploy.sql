@@ -1,6 +1,6 @@
 --- CREATE USER docker;
 --- CREATE DATABASE aidb;
-GRANT ALL PRIVILEGES ON DATABASE aidb TO docker;
+--- GRANT ALL PRIVILEGES ON DATABASE aidb TO docker;
 CREATE SCHEMA aidb;
 
 ---
