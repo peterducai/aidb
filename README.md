@@ -1,5 +1,5 @@
 # aidb
-AIDB stands for **asset inventory database** also known as CMDB (configuration management database)
+AIDB stands for **asset inventory database** also known as CMDB (configuration management database).
 
 ## Psql
 
@@ -27,3 +27,16 @@ sudo docker logs aidb1
 * remove docker, use podman
 * rebuild and test
 * test with PG11
+
+# copy of former dockerfile
+
+```
+FROM postgres
+
+ENV POSTGRES_USER docker
+ENV POSTGRES_PASSWORD post123
+ENV POSTGRES_DB aidb
+
+COPY 1_aidb_deploy.sql /docker-entrypoint-initdb.d/1_aidb_deploy.sql
+ #will be executed automatically
+```
