@@ -648,7 +648,7 @@ CREATE TABLE aidb.dns_records (
 
 
 
----
+--- TODO: check and cleanup
 ---
 --- OPENSTACK CLOUD
 ---
@@ -716,7 +716,7 @@ CREATE TABLE aidb.availability_zone(
 );
 
 
----
+--- TODO: remove
 --- JUJU
 ---
 CREATE TABLE aidb.juju_controllers (
@@ -772,7 +772,10 @@ CREATE TABLE aidb.maas_devices (
     device_status INTEGER);
 
 
+--- TODO: add Kubernetes
 
+
+--- TODO: add Openshift
     
 ---
 --- load COUNTRY with data

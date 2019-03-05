@@ -1,5 +1,5 @@
 # aidb
-asset inventory database
+AIDB stands for **asset inventory database** also known as CMDB (configuration management database)
 
 ## Psql
 
@@ -20,3 +20,10 @@ sudo docker logs aidb1
 
 
 > see also https://github.com/peterducai/aidb_portal
+
+
+# TODOs
+
+* remove docker, use podman
+* rebuild and test
+* test with PG11
