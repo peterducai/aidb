@@ -83,7 +83,7 @@ CREATE TABLE aidb.purchase_order (
 ---
 --- LICENSE OWNERSHIP
 ---
-CREATE TYPE aidb.license_ownership AS ENUM ('perpetual', 'subscription', 'trial', 'other');
+CREATE TYPE aidb.license_ownership AS ENUM ('perpetual', 'subscription', 'trial', 'freeware', 'self support');
 
 ---
 --- SOFTWARE
@@ -181,6 +181,8 @@ CREATE TYPE aidb.license_model AS ENUM ('appliance', --- covering use of a speci
 );
 
 
+
+--- TODO: fix..  there is already license in places
 ---
 --- LICENSE of hw and sw
 ---
