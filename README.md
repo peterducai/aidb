@@ -27,6 +27,7 @@ sudo docker logs aidb1
 * remove docker, use podman
 * rebuild and test
 * test with PG11
+* add Content views (Satellite friendly) like Dev, QA, and Production..
 
 # copy of former dockerfile
 
