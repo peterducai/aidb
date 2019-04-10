@@ -6,4 +6,4 @@ ENV POSTGRES_DB aidb
 
 COPY 1_aidb_deploy.sql /docker-entrypoint-initdb.d/1_aidb_deploy.sql
 
-RUN su docker && pg_ctl -D /var/lib/postgresql/data -l logfile start
+CMD pg_ctl -D /var/lib/postgresql/data -l logfile start
