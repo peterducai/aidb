@@ -1,6 +1,14 @@
 # aidb
 AIDB stands for **asset inventory database** also known as CMDB (configuration management database).
 
+
+# Selinux & Firewalld
+
+```
+sudo semanage port -a -t postgresql_port_t -p tcp 5432
+sudo firewall-cmd --add-port=5432/tcp --permanent
+```
+
 ## Psql
 
 ```bash
