@@ -25,6 +25,11 @@ sudo docker stop aidb1 && sudo docker rm aidb1
 sudo docker run -it --name aidb1 -p 5432:5432 -e POSTGRES_PASSWORD=post123. -d peterducai/aidb:latest
 sudo docker logs aidb1
 ```
+# Bender Ansible
+
+> pip3 install --user ansible-bender
+> ansible-bender build ./bender_playbook.yaml
+
 
 # Podman & Buildah
 
