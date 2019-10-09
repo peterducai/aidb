@@ -2,6 +2,25 @@
 AIDB stands for **asset inventory database** also known as CMDB (configuration management database).
 
 
+
+# Bare PG
+
+
+> /usr/bin/postgresql-setup --initdb
+> systemctl enable postgresql
+> systemctl restart postgresql
+
+```
+sudo -u postgres psql
+postgres=# create database aidb;
+postgres=# create user aidbuser with encrypted password 'aidbpass#@666';
+postgres=# grant all privileges on database aidb to aidbuser;
+\q
+```
+
+> sudo -u postgres psql -f aidb.sql aidb
+
+
 # Selinux & Firewalld
 
 ```
