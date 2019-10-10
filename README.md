@@ -18,7 +18,24 @@ postgres=# grant all privileges on database aidb to aidbuser;
 \q
 ```
 
-> sudo -u postgres psql -f aidb.sql aidb
+> sudo -u postgres psql < aidb.sql
+
+
+
+psql -U postgres -d postgres -c "alter user produser with password 'produser';"
+
+I used the following settings:
+pg_hba.conf
+
+local   all             all                                     peer
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            password  
+# IPv6 local connections:
+host    all             all             ::1/128                 password
+
+Connection is successful finally for the following command:
+
+psql -U produser -d dbname -h localhost -W 
 
 
 # Selinux & Firewalld
