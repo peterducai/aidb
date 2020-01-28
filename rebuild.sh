@@ -3,7 +3,7 @@
 # dnf -y install podman skopeo buildah
 
 # DISTROS
-buildah from --name aidb registry.redhat.io/rhel8/postgresql-10
+buildah from --name aidb fedora
 #fedora_container=$(buildah from fedora)
 
 #mnt=(buildah mount $rhel_container)
@@ -11,8 +11,8 @@ buildah from --name aidb registry.redhat.io/rhel8/postgresql-10
 buildah run aidb -- dnf update -y
 buildah run aidb -- dnf install postgresql-server -y
 
-buildah copy $rhel_container ./1_aidb_deploy.sql /usr/local/bin
-buildah config --cmd /usr/local/bin/1_aidb_deploy.sql $rhel_container
+buildah copy $rhel_container ./aidb.sql /usr/local/bin
+buildah config --cmd /usr/local/bin/aidb.sql $rhel_container
 #CMD pg_ctl -D /var/lib/postgresql/data -l logfile -w restart start 
 buildah run $rhel_container "pg_ctl -D /var/lib/postgresql/data -l logfile -w restart start" 
 
